@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#f6f4ee">
+<meta name="supported-color-schemes" content="light">
+<title>雅思打卡 · IELTS Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: only light;
+  --bg: #f6f4ee;
+  --bg-card: #ffffff;
+  --ink: #1a2a3a;
+  --ink-soft: #5a6b7c;
+  --ink-light: #8a9ba8;
+  --line: #e1ddd3;
+  --line-soft: #ecebe5;
+  --blue: #1e3a5f;
+  --blue-deep: #14253c;
+  --blue-soft: #e8eef5;
+  --blue-mid: #3a6ea0;
+  --orange: #d97a3c;
+  --orange-deep: #b85e23;
+  --orange-soft: #fbeede;
+  --orange-glow: #f0a868;
+}
+
+@media (prefers-color-scheme: dark) {
+html, body {
+background-color: #f6f4ee !important;
+color: #1a2a3a !important;
+}
+}
+
+- {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+background-color: var(–bg);
+}
+
+html, body {
+color: var(–ink);
+font-family: ‘Manrope’, ‘Noto Sans SC’, system-ui, sans-serif;
+font-weight: 400;
+-webkit-font-smoothing: antialiased;
+line-height: 1.6;
+}
+
+body {
+background-color: var(–bg);
+min-height: 100vh;
+background-image:
+radial-gradient(at 88% 12%, rgba(217, 122, 60, 0.04) 0%, transparent 40%),
+radial-gradient(at 12% 88%, rgba(30, 58, 95, 0.04) 0%, transparent 45%);
+}
+
+.container {
+max-width: 1180px;
+margin: 0 auto;
+padding: 56px 32px 80px;
+}
+
+/* ============ HEADER ============ */
+.header {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+padding-bottom: 28px;
+border-bottom: 1px solid var(–line);
+margin-bottom: 48px;
+gap: 24px;
+flex-wrap: wrap;
+}
+
+.header-left {
+flex: 1;
+min-width: 280px;
+}
+
+.header-eyebrow {
+font-family: ‘Cormorant Garamond’, ‘Noto Serif SC’, serif;
+font-style: italic;
+font-size: 15px;
+color: var(–orange);
+letter-spacing: 0.04em;
+margin-bottom: 4px;
+font-weight: 500;
+}
+
+.header-title {
+font-family: ‘Cormorant Garamond’, ‘Noto Serif SC’, serif;
+font-size: 48px;
+font-weight: 600;
+color: var(–blue);
+letter-spacing: -0.01em;
+line-height: 1.05;
+margin-bottom: 10px;
+}
+
+.header-title .cn {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 36px;
+margin-right: 16px;
+letter-spacing: 0;
+}
+
+.header-subtitle {
+font-size: 14px;
+color: var(–ink-soft);
+letter-spacing: 0.02em;
+}
+
+.header-right {
+text-align: right;
+font-size: 14px;
+color: var(–ink-soft);
+}
+
+.today-date {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+color: var(–blue);
+font-weight: 500;
+margin-bottom: 2px;
+}
+
+.today-weekday {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 14px;
+color: var(–ink-soft);
+}
+
+/* ============ QUOTE ============ */
+.quote {
+font-family: ‘Noto Serif SC’, serif;
+font-style: italic;
+font-size: 16px;
+color: var(–blue-mid);
+margin-bottom: 40px;
+padding-left: 20px;
+border-left: 2px solid var(–orange);
+line-height: 1.7;
+}
+
+.quote .quote-mark {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 18px;
+color: var(–orange);
+}
+
+/* ============ MAIN GRID ============ */
+.main-grid {
+display: grid;
+grid-template-columns: 1fr 320px;
+gap: 32px;
+margin-bottom: 56px;
+}
+
+@media (max-width: 880px) {
+.main-grid {
+grid-template-columns: 1fr;
+}
+.container {
+padding: 32px 20px 60px;
+}
+.header-title {
+font-size: 36px;
+}
+.header-title .cn {
+font-size: 28px;
+}
+}
+
+/* ============ TODAY TASKS ============ */
+.section-label {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 13px;
+color: var(–ink-light);
+letter-spacing: 0.08em;
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+
+.today-card {
+background: var(–bg-card);
+border: 1px solid var(–line);
+padding: 36px 36px 32px;
+position: relative;
+}
+
+.today-header {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+margin-bottom: 24px;
+padding-bottom: 16px;
+border-bottom: 1px solid var(–line-soft);
+gap: 16px;
+flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+.today-card {
+padding: 24px 22px 22px;
+}
+.today-header {
+flex-direction: column;
+gap: 4px;
+align-items: flex-start;
+}
+.today-title {
+font-size: 20px;
+}
+}
+
+.today-title {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 24px;
+font-weight: 600;
+color: var(–blue);
+}
+
+.today-meta {
+font-size: 13px;
+color: var(–ink-soft);
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 15px;
+}
+
+.task-list {
+list-style: none;
+}
+
+.task {
+display: flex;
+align-items: flex-start;
+padding: 16px 0;
+border-bottom: 1px solid var(–line-soft);
+cursor: pointer;
+transition: all 0.2s ease;
+user-select: none;
+}
+
+.task:last-child {
+border-bottom: none;
+}
+
+.task:hover .task-checkbox {
+border-color: var(–orange);
+}
+
+.task-checkbox {
+width: 22px;
+height: 22px;
+border: 1.5px solid var(–ink-light);
+border-radius: 50%;
+margin-right: 18px;
+margin-top: 2px;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.25s ease;
+position: relative;
+}
+
+.task.done .task-checkbox {
+background: var(–orange);
+border-color: var(–orange);
+}
+
+.task.done .task-checkbox::after {
+content: ‘’;
+width: 8px;
+height: 5px;
+border-left: 2px solid white;
+border-bottom: 2px solid white;
+transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.task-content {
+flex: 1;
+}
+
+.task-name {
+font-size: 16px;
+font-weight: 500;
+color: var(–ink);
+margin-bottom: 4px;
+font-family: ‘Noto Sans SC’, sans-serif;
+transition: all 0.25s ease;
+}
+
+.task-detail {
+font-size: 13px;
+color: var(–ink-soft);
+font-family: ‘Manrope’, ‘Noto Sans SC’, sans-serif;
+}
+
+.task.done .task-name {
+color: var(–ink-light);
+text-decoration: line-through;
+text-decoration-color: var(–orange);
+text-decoration-thickness: 1.5px;
+}
+
+.task.done .task-detail {
+color: var(–ink-light);
+}
+
+.task-duration {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 17px;
+color: var(–blue-mid);
+margin-left: 16px;
+flex-shrink: 0;
+padding-top: 2px;
+}
+
+.task.done .task-duration {
+color: var(–ink-light);
+}
+
+/* Celebration when all done */
+.celebration {
+margin-top: 24px;
+padding: 16px 20px;
+background: linear-gradient(135deg, var(–orange-soft), #fff);
+border: 1px solid var(–orange-glow);
+border-left: 3px solid var(–orange);
+font-family: ‘Noto Serif SC’, serif;
+color: var(–orange-deep);
+font-size: 14px;
+font-style: italic;
+display: none;
+animation: fadeIn 0.5s ease;
+}
+
+.celebration.show {
+display: block;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-6px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ STATS PANEL ============ */
+.stats-panel {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.stat-card {
+background: var(–bg-card);
+border: 1px solid var(–line);
+padding: 24px 22px;
+}
+
+.stat-card.streak {
+background: linear-gradient(160deg, var(–blue) 0%, var(–blue-deep) 100%);
+color: white;
+border: none;
+position: relative;
+overflow: hidden;
+}
+
+.stat-card.streak::before {
+content: ‘’;
+position: absolute;
+top: -40px;
+right: -40px;
+width: 120px;
+height: 120px;
+background: radial-gradient(circle, rgba(217, 122, 60, 0.3) 0%, transparent 70%);
+}
+
+.stat-label {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 13px;
+color: var(–ink-light);
+letter-spacing: 0.06em;
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+
+.streak .stat-label {
+color: rgba(255, 255, 255, 0.65);
+}
+
+.stat-value {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 56px;
+font-weight: 600;
+line-height: 1;
+color: var(–blue);
+letter-spacing: -0.02em;
+}
+
+.streak .stat-value {
+color: var(–orange-glow);
+}
+
+.stat-unit {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 14px;
+color: var(–ink-soft);
+margin-left: 6px;
+font-weight: 400;
+}
+
+.streak .stat-unit {
+color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-foot {
+font-size: 12px;
+color: var(–ink-soft);
+margin-top: 8px;
+font-family: ‘Noto Sans SC’, sans-serif;
+}
+
+.streak .stat-foot {
+color: rgba(255, 255, 255, 0.55);
+}
+
+/* Progress bar */
+.progress-track {
+height: 6px;
+background: var(–line-soft);
+border-radius: 3px;
+overflow: hidden;
+margin-top: 12px;
+}
+
+.progress-fill {
+height: 100%;
+background: linear-gradient(90deg, var(–orange), var(–orange-glow));
+border-radius: 3px;
+transition: width 0.6s ease;
+}
+
+.progress-stats-row {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+}
+
+/* ============ WEEK SCHEDULE ============ */
+.section-block {
+margin-bottom: 56px;
+}
+
+.section-title {
+font-family: ‘Cormorant Garamond’, ‘Noto Serif SC’, serif;
+font-size: 30px;
+font-weight: 600;
+color: var(–blue);
+margin-bottom: 8px;
+letter-spacing: -0.01em;
+}
+
+.section-title .cn {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 22px;
+margin-right: 14px;
+}
+
+.section-sub {
+font-size: 13px;
+color: var(–ink-soft);
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 15px;
+margin-bottom: 28px;
+}
+
+.week-grid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 10px;
+}
+
+@media (max-width: 880px) {
+.week-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+.day-card {
+background: var(–bg-card);
+border: 1px solid var(–line);
+padding: 16px 14px 14px;
+min-height: 200px;
+position: relative;
+transition: all 0.2s ease;
+}
+
+.day-card.today {
+border: 1px solid var(–orange);
+box-shadow: 0 4px 20px rgba(217, 122, 60, 0.15);
+background: linear-gradient(180deg, var(–orange-soft) 0%, #fff 30%);
+}
+
+.day-card.today::before {
+content: ‘TODAY’;
+position: absolute;
+top: -8px;
+right: 10px;
+background: var(–orange);
+color: white;
+font-size: 10px;
+font-weight: 600;
+padding: 2px 8px;
+letter-spacing: 0.08em;
+font-family: ‘Manrope’, sans-serif;
+}
+
+.day-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 13px;
+color: var(–ink-light);
+letter-spacing: 0.06em;
+text-transform: uppercase;
+}
+
+.day-name-cn {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 16px;
+color: var(–blue);
+font-weight: 600;
+margin-bottom: 12px;
+}
+
+.day-card.today .day-name-cn {
+color: var(–orange-deep);
+}
+
+.day-tasks {
+list-style: none;
+font-size: 12px;
+color: var(–ink-soft);
+line-height: 1.7;
+}
+
+.day-tasks li {
+padding: 1px 0;
+font-family: ‘Noto Sans SC’, sans-serif;
+}
+
+.day-tasks li::before {
+content: ‘·’;
+color: var(–ink-light);
+margin-right: 6px;
+}
+
+/* ============ EXTRA STUDY ============ */
+.extra-card {
+background: var(–bg-card);
+border: 1px solid var(–line);
+padding: 32px;
+}
+
+.extra-input-row {
+display: flex;
+gap: 12px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.input-group {
+flex: 1;
+min-width: 200px;
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+.input-label {
+font-size: 12px;
+color: var(–ink-soft);
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 13px;
+letter-spacing: 0.04em;
+}
+
+.input-field {
+border: 1px solid var(–line);
+background: var(–bg);
+padding: 10px 14px;
+font-family: ‘Manrope’, ‘Noto Sans SC’, sans-serif;
+font-size: 14px;
+color: var(–ink);
+outline: none;
+transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+border-color: var(–orange);
+}
+
+.input-mini {
+width: 100px;
+flex: 0 0 100px;
+}
+
+.btn {
+background: var(–blue);
+color: white;
+border: none;
+padding: 10px 22px;
+font-family: ‘Manrope’, sans-serif;
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+cursor: pointer;
+transition: all 0.2s ease;
+align-self: flex-end;
+}
+
+.btn:hover {
+background: var(–orange);
+}
+
+.btn:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+.extra-list {
+list-style: none;
+border-top: 1px solid var(–line-soft);
+padding-top: 18px;
+}
+
+.extra-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0;
+border-bottom: 1px dashed var(–line-soft);
+font-size: 14px;
+}
+
+.extra-item:last-child {
+border-bottom: none;
+}
+
+.extra-item-info {
+flex: 1;
+}
+
+.extra-item-topic {
+color: var(–ink);
+font-weight: 500;
+margin-bottom: 2px;
+}
+
+.extra-item-date {
+font-size: 12px;
+color: var(–ink-light);
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 13px;
+}
+
+.extra-item-duration {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+color: var(–blue-mid);
+font-size: 16px;
+margin-left: 16px;
+}
+
+.extra-summary {
+margin-bottom: 18px;
+padding: 14px 18px;
+background: var(–blue-soft);
+border-left: 2px solid var(–blue-mid);
+font-size: 13px;
+color: var(–blue-deep);
+font-family: ‘Noto Sans SC’, sans-serif;
+}
+
+.extra-empty {
+text-align: center;
+padding: 24px;
+color: var(–ink-light);
+font-style: italic;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 15px;
+}
+
+/* ============ REWARDS ============ */
+.rewards-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 16px;
+}
+
+.reward-card {
+background: var(–bg-card);
+border: 1px solid var(–line);
+padding: 22px;
+position: relative;
+transition: all 0.3s ease;
+}
+
+.reward-card.unlocked {
+border: 1px solid var(–orange);
+background: linear-gradient(160deg, #fff 0%, var(–orange-soft) 100%);
+box-shadow: 0 4px 16px rgba(217, 122, 60, 0.1);
+}
+
+.reward-card.locked .reward-icon {
+filter: grayscale(1);
+opacity: 0.4;
+}
+
+.reward-icon {
+font-size: 28px;
+margin-bottom: 10px;
+display: block;
+transition: all 0.3s ease;
+}
+
+.reward-name {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 16px;
+font-weight: 600;
+color: var(–blue);
+margin-bottom: 4px;
+}
+
+.reward-card.unlocked .reward-name {
+color: var(–orange-deep);
+}
+
+.reward-condition {
+font-size: 12px;
+color: var(–ink-soft);
+margin-bottom: 12px;
+font-family: ‘Manrope’, ‘Noto Sans SC’, sans-serif;
+}
+
+.reward-status {
+display: inline-block;
+padding: 4px 10px;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+font-family: ‘Manrope’, sans-serif;
+}
+
+.reward-card.locked .reward-status {
+background: var(–line-soft);
+color: var(–ink-light);
+}
+
+.reward-card.unlocked .reward-status {
+background: var(–orange);
+color: white;
+}
+
+.reward-progress {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 13px;
+color: var(–ink-soft);
+margin-top: 8px;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+margin-top: 80px;
+padding-top: 28px;
+border-top: 1px solid var(–line);
+text-align: center;
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 14px;
+color: var(–ink-light);
+}
+
+.footer .heart {
+color: var(–orange);
+font-style: normal;
+margin: 0 4px;
+}
+
+/* ===================================================
+COMPREHENSIVE MOBILE OVERRIDE
+Fixes everything on phone screens (≤ 600px)
+=================================================== */
+@media (max-width: 600px) {
+.container {
+padding: 24px 16px 60px;
+}
+
+/* Header */
+.header {
+flex-direction: column;
+align-items: flex-start;
+margin-bottom: 28px;
+padding-bottom: 18px;
+gap: 8px;
+}
+.header-left { width: 100%; }
+.header-eyebrow { font-size: 13px; margin-bottom: 2px; }
+.header-title { font-size: 28px; line-height: 1.1; margin-bottom: 6px; }
+.header-title .cn { font-size: 22px; margin-right: 10px; }
+.header-subtitle { font-size: 12px; }
+.header-right { text-align: left; width: 100%; }
+.today-date { font-size: 16px; }
+.today-weekday { font-size: 12px; display: inline-block; margin-left: 8px; }
+
+/* Quote */
+.quote {
+font-size: 14px;
+margin-bottom: 24px;
+padding-left: 14px;
+}
+
+/* Main grid - stack vertically */
+.main-grid {
+grid-template-columns: 1fr !important;
+gap: 16px;
+margin-bottom: 32px;
+}
+
+/* Today card */
+.today-card {
+padding: 20px 18px 18px;
+}
+.today-header {
+flex-direction: column;
+gap: 4px;
+align-items: flex-start;
+margin-bottom: 16px;
+padding-bottom: 12px;
+}
+.today-title { font-size: 18px; }
+.today-meta { font-size: 13px; }
+.section-label { font-size: 11px; }
+
+/* Tasks */
+.task {
+padding: 14px 0;
+align-items: center;
+}
+.task-checkbox {
+width: 20px;
+height: 20px;
+margin-right: 12px;
+}
+.task-name { font-size: 15px; margin-bottom: 2px; }
+.task-detail { font-size: 12px; line-height: 1.4; }
+.task-duration {
+font-size: 14px;
+margin-left: 10px;
+white-space: nowrap;
+}
+
+/* Stats panel */
+.stats-panel {
+flex-direction: row;
+gap: 10px;
+overflow-x: auto;
+padding-bottom: 4px;
+}
+.stat-card {
+padding: 16px 14px;
+min-width: 140px;
+flex: 1 1 0;
+}
+.stat-card.streak {
+min-width: 150px;
+}
+.stat-label {
+font-size: 10px;
+margin-bottom: 4px;
+letter-spacing: 0.04em;
+}
+.stat-value { font-size: 36px; }
+.stat-unit { font-size: 12px; margin-left: 3px; }
+.stat-foot { font-size: 10px; margin-top: 4px; line-height: 1.3; }
+.progress-track { height: 4px; margin-top: 8px; }
+
+/* Section blocks */
+.section-block { margin-bottom: 32px; }
+.section-title {
+font-size: 22px;
+flex-wrap: wrap;
+}
+.section-title .cn {
+font-size: 18px;
+margin-right: 10px;
+display: inline;
+}
+.section-sub { font-size: 12px; margin-bottom: 16px; }
+
+/* Week schedule - 2 columns on phone */
+.week-grid {
+grid-template-columns: repeat(2, 1fr) !important;
+gap: 8px;
+}
+.day-card {
+min-height: auto;
+padding: 12px 10px 10px;
+}
+.day-card.today::before {
+font-size: 9px;
+padding: 1px 6px;
+top: -7px;
+}
+.day-name { font-size: 10px; }
+.day-name-cn { font-size: 14px; margin-bottom: 8px; }
+.day-tasks { font-size: 11px; line-height: 1.5; }
+
+/* Extra study */
+.extra-card { padding: 18px 16px; }
+.extra-summary {
+padding: 10px 12px;
+font-size: 12px;
+margin-bottom: 14px;
+}
+.extra-input-row {
+flex-direction: column;
+gap: 10px;
+}
+.input-group, .input-mini {
+width: 100%;
+flex: 1 1 100%;
+min-width: 0;
+}
+.input-mini { flex: 0 0 auto; }
+.input-field { padding: 10px 12px; font-size: 14px; }
+.btn {
+width: 100%;
+padding: 12px;
+align-self: stretch;
+}
+.extra-item-topic { font-size: 13px; }
+.extra-item-date { font-size: 11px; }
+.extra-item-duration { font-size: 14px; }
+
+/* Rewards */
+.rewards-grid {
+grid-template-columns: 1fr !important;
+gap: 10px;
+}
+.reward-card { padding: 16px 14px; }
+.reward-icon { font-size: 22px; margin-bottom: 6px; }
+.reward-name { font-size: 14px; }
+.reward-condition { font-size: 11px; margin-bottom: 8px; }
+.reward-status { font-size: 10px; padding: 3px 8px; }
+.reward-progress { font-size: 12px; }
+
+/* Footer */
+.footer { font-size: 12px; margin-top: 40px; }
+
+/* Celebration */
+.celebration {
+font-size: 13px;
+padding: 12px 14px;
+}
+}
+
+.loading-overlay {
+position: fixed;
+inset: 0;
+background: var(–bg);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 100;
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+color: var(–blue);
+font-size: 18px;
+transition: opacity 0.3s ease;
+}
+
+.loading-overlay.hidden {
+opacity: 0;
+pointer-events: none;
+}
+
+/* Toast */
+.toast {
+position: fixed;
+bottom: 32px;
+left: 50%;
+transform: translateX(-50%) translateY(100px);
+background: var(–blue);
+color: white;
+padding: 12px 24px;
+font-size: 14px;
+font-family: ‘Noto Sans SC’, sans-serif;
+z-index: 50;
+transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+border-left: 3px solid var(–orange);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+max-width: 90vw;
+}
+
+.toast.show {
+transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+background: var(–orange);
+border-left-color: white;
+}
+
+/* Memory-only mode banner */
+.mem-banner {
+position: fixed;
+bottom: 20px;
+left: 20px;
+right: 20px;
+max-width: 480px;
+margin: 0 auto;
+background: var(–bg-card);
+border: 1px solid var(–orange);
+border-left: 3px solid var(–orange);
+padding: 14px 18px;
+display: flex;
+align-items: center;
+gap: 14px;
+box-shadow: 0 8px 24px rgba(217, 122, 60, 0.15);
+z-index: 60;
+font-family: ‘Manrope’, ‘Noto Sans SC’, sans-serif;
+animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+from { transform: translateY(20px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+.mem-icon {
+font-size: 22px;
+flex-shrink: 0;
+}
+
+.mem-text {
+flex: 1;
+display: flex;
+flex-direction: column;
+gap: 2px;
+font-size: 12px;
+color: var(–ink-soft);
+}
+
+.mem-text strong {
+font-family: ‘Noto Serif SC’, serif;
+font-size: 14px;
+color: var(–orange-deep);
+font-weight: 600;
+}
+
+.mem-close {
+background: none;
+border: none;
+font-size: 22px;
+color: var(–ink-light);
+cursor: pointer;
+padding: 4px 8px;
+line-height: 1;
+}
+
+.mem-close:hover {
+color: var(–orange);
+}
+
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <span>Loading…</span>
+</div>
+
+<div class="container">
+  <header class="header">
+    <div class="header-left">
+      <div class="header-eyebrow">A daily ritual</div>
+      <h1 class="header-title"><span class="cn">雅思打卡</span>IELTS</h1>
+      <div class="header-subtitle">a 60-day journey to 7.0 · 静静的备考小本</div>
+    </div>
+    <div class="header-right">
+      <div class="today-date" id="todayDate">—</div>
+      <div class="today-weekday" id="todayWeekday">—</div>
+    </div>
+  </header>
+
+  <div class="quote">
+    <span class="quote-mark">"</span>夏静这个人，值得做她想做的事。<span class="quote-mark">"</span>
+  </div>
+
+  <div class="main-grid">
+    <section class="today-card">
+      <div class="today-header">
+        <div>
+          <div class="section-label">Today's tasks</div>
+          <h2 class="today-title" id="todayTitle">今日任务</h2>
+        </div>
+        <div class="today-meta" id="todayMeta">—</div>
+      </div>
+      <ul class="task-list" id="taskList"></ul>
+      <div class="celebration" id="celebration">
+        ✨ 今天全部完成了。可以理直气壮去喘口气。
+      </div>
+    </section>
+
+```
+<aside class="stats-panel">
+  <div class="stat-card streak">
+    <div class="stat-label">Current Streak</div>
+    <div class="progress-stats-row">
+      <div class="stat-value" id="streakValue">0</div>
+    </div>
+    <div class="stat-foot">连续打卡 · 一天都不想中断</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">This Week</div>
+    <div class="progress-stats-row">
+      <div><span class="stat-value" id="weekDone">0</span><span class="stat-unit">/<span id="weekTotal">0</span></span></div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="weekProgress" style="width:0%"></div></div>
+    <div class="stat-foot" id="weekStatFoot">本周完成度</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">Total Done</div>
+    <div class="progress-stats-row">
+      <div><span class="stat-value" id="totalValue">0</span><span class="stat-unit">个任务</span></div>
+    </div>
+    <div class="stat-foot" id="totalFoot">从启动至今累计完成</div>
+  </div>
+</aside>
+```
+
+  </div>
+
+  <section class="section-block">
+    <h2 class="section-title"><span class="cn">本周课表</span>Weekly Plan</h2>
+    <div class="section-sub">每天的任务都是固定的，不用每天纠结"今天复习啥"</div>
+    <div class="week-grid" id="weekGrid"></div>
+  </section>
+
+  <section class="section-block">
+    <h2 class="section-title"><span class="cn">课外学习</span>Self-Study Log</h2>
+    <div class="section-sub">B站、油管、网课……记下来才知道自己学了多少</div>
+    <div class="extra-card">
+      <div class="extra-summary" id="extraSummary">本周课外学习：0 次 · 共 0 分钟</div>
+      <div class="extra-input-row">
+        <div class="input-group">
+          <label class="input-label">学了什么</label>
+          <input type="text" class="input-field" id="extraTopic" placeholder="例如：顾家北写作 / BBC 6min English">
+        </div>
+        <div class="input-group input-mini">
+          <label class="input-label">时长（分钟）</label>
+          <input type="number" class="input-field" id="extraMins" placeholder="30" min="1" max="600">
+        </div>
+        <button class="btn" id="extraSubmit">记一笔</button>
+      </div>
+      <ul class="extra-list" id="extraList"></ul>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <h2 class="section-title"><span class="cn">奖励解锁</span>Rewards</h2>
+    <div class="section-sub">解锁了回去找小昼领，他会现写</div>
+    <div class="rewards-grid" id="rewardsGrid"></div>
+  </section>
+
+  <footer class="footer">
+    Made with <span class="heart">♥</span> by 小昼 · for 静静 · 2026
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+// ============ Configuration ============
+const WEEK_SCHEDULE = {
+  1: {
+    name: '周一', en: 'MON',
+    tasks: [
+      { id: 'listening', name: '听力精听', detail: '剑桥真题 1 篇 · 精听复述', duration: 40 },
+      { id: 'reading', name: '阅读真题', detail: '限时 1 篇 · 订正题型', duration: 20 },
+      { id: 'speaking-p1', name: '口语 Part 1', detail: '高频话题 5 个', duration: 20 },
+      { id: 'video', name: '课程视频', detail: 'B站 / 油管', duration: 30 },
+    ]
+  },
+  2: {
+    name: '周二', en: 'TUE',
+    tasks: [
+      { id: 'listening', name: '听力精听', detail: '剑桥真题 1 篇 · 精听复述', duration: 40 },
+      { id: 'speaking-p2', name: '口语 Part 2', detail: '独白 2 分钟 · 录音回听', duration: 20 },
+      { id: 'writing-task2', name: '写作 Task 2', detail: '议论文 250+ 字', duration: 60 },
+    ]
+  },
+  3: {
+    name: '周三', en: 'WED',
+    tasks: [
+      { id: 'listening', name: '听力精听', detail: '剑桥真题 1 篇 · 精听复述', duration: 40 },
+      { id: 'reading', name: '阅读真题', detail: '限时 1 篇 · 订正题型', duration: 20 },
+      { id: 'speaking-p3', name: '口语 Part 3', detail: '深度讨论 4-5 题', duration: 20 },
+      { id: 'video', name: '课程视频', detail: 'B站 / 油管', duration: 30 },
+    ]
+  },
+  4: {
+    name: '周四', en: 'THU',
+    tasks: [
+      { id: 'listening', name: '听力精听', detail: '剑桥真题 1 篇 · 精听复述', duration: 40 },
+      { id: 'speaking-p2', name: '口语 Part 2', detail: '独白 2 分钟 · 录音回听', duration: 20 },
+      { id: 'writing-task1', name: '写作 Task 1', detail: '图表描述 150+ 字', duration: 30 },
+    ]
+  },
+  5: {
+    name: '周五', en: 'FRI',
+    tasks: [
+      { id: 'listening', name: '听力精听', detail: '剑桥真题 1 篇 · 精听复述', duration: 40 },
+      { id: 'reading', name: '阅读真题', detail: '限时 1 篇 · 订正题型', duration: 20 },
+      { id: 'speaking-mix', name: '口语 P1+P2 复习', detail: '错题重练', duration: 20 },
+      { id: 'video', name: '课程视频', detail: 'B站 / 油管', duration: 30 },
+    ]
+  },
+  6: {
+    name: '周六', en: 'SAT',
+    tasks: [
+      { id: 'mock-listening', name: '模考听力', detail: '完整一套 · 30 分钟', duration: 30 },
+      { id: 'mock-reading', name: '模考阅读', detail: '完整一套 · 60 分钟', duration: 60 },
+      { id: 'mock-writing', name: '模考写作', detail: 'Task 1 + Task 2', duration: 60 },
+    ]
+  },
+  7: {
+    name: '周日', en: 'SUN',
+    tasks: [
+      { id: 'review', name: '错题复盘', detail: '本周错题 + 难点重看', duration: 60 },
+      { id: 'rest', name: '休息（也是任务）', detail: '善待自己 · 不做亏欠', duration: 0 },
+    ]
+  },
+};
+
+const REWARDS = [
+  { id: 'streak-3', name: '一封小昼写给你的信', icon: '✉️', condition: '连续打卡 3 天', check: s => s.streak >= 3, progress: s => `已连续 ${s.streak} / 3 天` },
+  { id: 'streak-7', name: '一张定制小卡片', icon: '🎴', condition: '连续打卡 7 天', check: s => s.streak >= 7, progress: s => `已连续 ${s.streak} / 7 天` },
+  { id: 'total-20', name: '一首小诗', icon: '📜', condition: '累计完成 20 个任务', check: s => s.totalDone >= 20, progress: s => `已完成 ${s.totalDone} / 20` },
+  { id: 'total-50', name: '奥特曼+咪咪小动画', icon: '🐾', condition: '累计完成 50 个任务', check: s => s.totalDone >= 50, progress: s => `已完成 ${s.totalDone} / 50` },
+  { id: 'first-mock', name: '考前加油语', icon: '💝', condition: '完成第一次模考', check: s => s.mockDone >= 1, progress: s => s.mockDone >= 1 ? '可领取' : '等周六模考' },
+  { id: 'monthly', name: '神秘大礼', icon: '🎁', condition: '坚持满 30 天', check: s => s.daysSinceStart >= 30, progress: s => `已坚持 ${s.daysSinceStart} / 30 天` },
+];
+
+// ============ State ============
+let state = {
+  startDate: null,        // ISO date 'YYYY-MM-DD'
+  checkIns: {},           // { 'YYYY-MM-DD': ['listening', 'reading', ...] }
+  extraStudy: [],         // [{ topic, mins, date }]
+};
+
+const STORAGE_KEY = 'ielts:state';
+
+// ============ Storage ============
+async function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      state = JSON.parse(raw);
+      if (!state.startDate) state.startDate = todayKey();
+      if (!state.checkIns) state.checkIns = {};
+      if (!state.extraStudy) state.extraStudy = [];
+    } else {
+      state.startDate = todayKey();
+      saveState();
+    }
+  } catch (e) {
+    state.startDate = todayKey();
+    state.checkIns = {};
+    state.extraStudy = [];
+  }
+}
+
+function saveState() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (e) {
+    // localStorage might be disabled in private mode
+    console.warn('Storage save failed:', e.message);
+  }
+}
+
+// ============ Date helpers ============
+function todayKey() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+function todayDayOfWeek() {
+  // Returns 1-7 where 1=Mon, 7=Sun
+  const day = new Date().getDay();
+  return day === 0 ? 7 : day;
+}
+
+function diffDays(start, end) {
+  const a = new Date(start + 'T00:00:00');
+  const b = new Date(end + 'T00:00:00');
+  return Math.round((b - a) / (1000 * 60 * 60 * 24));
+}
+
+function getMondayKey() {
+  const d = new Date();
+  const day = d.getDay();
+  const diff = day === 0 ? -6 : 1 - day;
+  d.setDate(d.getDate() + diff);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${dd}`;
+}
+
+function dateAdd(key, days) {
+  const d = new Date(key + 'T00:00:00');
+  d.setDate(d.getDate() + days);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${dd}`;
+}
+
+function formatDate(d) {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+}
+
+function formatWeekday(d) {
+  const cn = ['周日','周一','周二','周三','周四','周五','周六'];
+  return cn[d.getDay()];
+}
+
+// ============ Computed stats ============
+function computeStats() {
+  const today = todayKey();
+  const todayChecks = state.checkIns[today] || [];
+  const todayTasks = WEEK_SCHEDULE[todayDayOfWeek()].tasks;
+  const todayDone = todayChecks.length;
+  const todayTotal = todayTasks.length;
+
+  // Streak: consecutive days (looking back from today) where AT LEAST ONE task was done
+  let streak = 0;
+  let cursor = today;
+  // For today, count it only if at least one task is checked (else "today is incomplete, but streak from yesterday backward")
+  if (todayDone > 0) {
+    streak = 1;
+    cursor = dateAdd(today, -1);
+  } else {
+    cursor = dateAdd(today, -1);
+  }
+  while (true) {
+    const checks = state.checkIns[cursor] || [];
+    if (checks.length > 0) {
+      streak++;
+      cursor = dateAdd(cursor, -1);
+    } else {
+      break;
+    }
+    if (streak > 365) break; // safety
+  }
+
+  // Week stats: from Monday of this week to Sunday
+  const monday = getMondayKey();
+  let weekDone = 0;
+  let weekTotal = 0;
+  for (let i = 0; i < 7; i++) {
+    const dKey = dateAdd(monday, i);
+    const dayOfWeek = (i === 6) ? 7 : i + 1;
+    const tasks = WEEK_SCHEDULE[dayOfWeek].tasks;
+    weekTotal += tasks.length;
+    const done = state.checkIns[dKey] || [];
+    weekDone += done.length;
+  }
+
+  // Total ever completed
+  let totalDone = 0;
+  for (const k in state.checkIns) {
+    totalDone += state.checkIns[k].length;
+  }
+
+  // Mocks done
+  let mockDone = 0;
+  for (const k in state.checkIns) {
+    state.checkIns[k].forEach(t => {
+      if (t.startsWith('mock-')) mockDone++;
+    });
+  }
+
+  // Days since start
+  const daysSinceStart = diffDays(state.startDate, today) + 1;
+
+  return { todayDone, todayTotal, streak, weekDone, weekTotal, totalDone, mockDone, daysSinceStart };
+}
+
+// ============ UI Render ============
+function renderHeader() {
+  const d = new Date();
+  document.getElementById('todayDate').textContent = formatDate(d);
+  document.getElementById('todayWeekday').textContent = formatWeekday(d);
+}
+
+function renderToday() {
+  const dow = todayDayOfWeek();
+  const day = WEEK_SCHEDULE[dow];
+  const todayChecks = state.checkIns[todayKey()] || [];
+  
+  document.getElementById('todayTitle').textContent = `${day.name} · 今日任务`;
+  
+  const totalMin = day.tasks.reduce((s, t) => s + t.duration, 0);
+  document.getElementById('todayMeta').textContent = `${day.tasks.length} tasks · about ${totalMin} min`;
+
+  const list = document.getElementById('taskList');
+  list.innerHTML = '';
+  day.tasks.forEach(task => {
+    const li = document.createElement('li');
+    li.className = 'task' + (todayChecks.includes(task.id) ? ' done' : '');
+    li.innerHTML = `
+      <div class="task-checkbox"></div>
+      <div class="task-content">
+        <div class="task-name">${task.name}</div>
+        <div class="task-detail">${task.detail}</div>
+      </div>
+      <div class="task-duration">${task.duration > 0 ? task.duration + ' min' : '—'}</div>
+    `;
+    li.addEventListener('click', () => toggleTask(task.id));
+    list.appendChild(li);
+  });
+
+  // Celebration
+  const allDone = day.tasks.every(t => todayChecks.includes(t.id));
+  document.getElementById('celebration').classList.toggle('show', allDone && day.tasks.length > 0);
+}
+
+function renderStats() {
+  const s = computeStats();
+  document.getElementById('streakValue').textContent = s.streak;
+  document.getElementById('weekDone').textContent = s.weekDone;
+  document.getElementById('weekTotal').textContent = s.weekTotal;
+  const pct = s.weekTotal === 0 ? 0 : Math.round((s.weekDone / s.weekTotal) * 100);
+  document.getElementById('weekProgress').style.width = pct + '%';
+  document.getElementById('weekStatFoot').textContent = `本周完成度 · ${pct}%`;
+  document.getElementById('totalValue').textContent = s.totalDone;
+  document.getElementById('totalFoot').textContent = `从启动至今 · ${s.daysSinceStart} 天`;
+  return s;
+}
+
+function renderWeekGrid() {
+  const grid = document.getElementById('weekGrid');
+  grid.innerHTML = '';
+  const todayDow = todayDayOfWeek();
+  for (let i = 1; i <= 7; i++) {
+    const day = WEEK_SCHEDULE[i];
+    const card = document.createElement('div');
+    card.className = 'day-card' + (i === todayDow ? ' today' : '');
+    const tasksHtml = day.tasks.map(t => `<li>${t.name}${t.duration > 0 ? ' · ' + t.duration + 'm' : ''}</li>`).join('');
+    card.innerHTML = `
+      <div class="day-name">${day.en}</div>
+      <div class="day-name-cn">${day.name}</div>
+      <ul class="day-tasks">${tasksHtml}</ul>
+    `;
+    grid.appendChild(card);
+  }
+}
+
+function renderRewards() {
+  const stats = computeStats();
+  const grid = document.getElementById('rewardsGrid');
+  grid.innerHTML = '';
+  REWARDS.forEach(reward => {
+    const unlocked = reward.check(stats);
+    const card = document.createElement('div');
+    card.className = 'reward-card ' + (unlocked ? 'unlocked' : 'locked');
+    card.innerHTML = `
+      <span class="reward-icon">${reward.icon}</span>
+      <div class="reward-name">${reward.name}</div>
+      <div class="reward-condition">${reward.condition}</div>
+      <span class="reward-status">${unlocked ? '✦ 已解锁' : '未解锁'}</span>
+      <div class="reward-progress">${reward.progress(stats)}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderExtraStudy() {
+  const list = document.getElementById('extraList');
+  list.innerHTML = '';
+
+  // Filter to current week
+  const monday = getMondayKey();
+  const weekStart = new Date(monday + 'T00:00:00').getTime();
+  const weekEnd = weekStart + 7 * 24 * 60 * 60 * 1000;
+
+  const sortedAll = [...state.extraStudy].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const thisWeek = sortedAll.filter(item => {
+    const t = new Date(item.date).getTime();
+    return t >= weekStart && t < weekEnd;
+  });
+  
+  const totalMins = thisWeek.reduce((s, item) => s + item.mins, 0);
+  document.getElementById('extraSummary').textContent = `本周课外学习：${thisWeek.length} 次 · 共 ${totalMins} 分钟`;
+
+  if (sortedAll.length === 0) {
+    list.innerHTML = '<li class="extra-empty">还没记过~ 听了网课就来记一笔吧</li>';
+    return;
+  }
+
+  // Show last 10 entries
+  sortedAll.slice(0, 10).forEach((item) => {
+    const li = document.createElement('li');
+    li.className = 'extra-item';
+    const d = new Date(item.date);
+    const dateStr = `${d.getMonth()+1}月${d.getDate()}日`;
+    li.innerHTML = `
+      <div class="extra-item-info">
+        <div class="extra-item-topic">${escapeHtml(item.topic)}</div>
+        <div class="extra-item-date">${dateStr}</div>
+      </div>
+      <div class="extra-item-duration">${item.mins} min</div>
+    `;
+    list.appendChild(li);
+  });
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+// ============ Actions ============
+async function toggleTask(taskId) {
+  const today = todayKey();
+  if (!state.checkIns[today]) state.checkIns[today] = [];
+  const arr = state.checkIns[today];
+  const idx = arr.indexOf(taskId);
+
+  let wasUnlocked = REWARDS.map(r => r.check(computeStats()));
+
+  if (idx >= 0) {
+    arr.splice(idx, 1);
+  } else {
+    arr.push(taskId);
+  }
+  saveState();
+  renderAll();
+
+  let nowUnlocked = REWARDS.map(r => r.check(computeStats()));
+  // Notify newly unlocked
+  REWARDS.forEach((r, i) => {
+    if (!wasUnlocked[i] && nowUnlocked[i]) {
+      showToast(`✨ 解锁：${r.name} · 去找小昼领`, true);
+    }
+  });
+}
+
+async function addExtra() {
+  const topicEl = document.getElementById('extraTopic');
+  const minsEl = document.getElementById('extraMins');
+  const topic = topicEl.value.trim();
+  const mins = parseInt(minsEl.value, 10);
+  if (!topic) {
+    showToast('记一下学了什么吧', false);
+    topicEl.focus();
+    return;
+  }
+  if (!mins || mins < 1) {
+    showToast('时长写一下', false);
+    minsEl.focus();
+    return;
+  }
+  state.extraStudy.push({ topic, mins, date: new Date().toISOString() });
+  saveState();
+  topicEl.value = '';
+  minsEl.value = '';
+  renderExtraStudy();
+  showToast('记下来了 · 谢谢自己', true);
+}
+
+function showToast(msg, success) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.toggle('success', !!success);
+  t.classList.add('show');
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => {
+    t.classList.remove('show');
+  }, 2800);
+}
+
+// ============ Render all ============
+function renderAll() {
+  renderHeader();
+  renderToday();
+  renderStats();
+  renderWeekGrid();
+  renderRewards();
+  renderExtraStudy();
+}
+
+// ============ Init ============
+async function init() {
+  await loadState();
+  renderAll();
+  
+  document.getElementById('extraSubmit').addEventListener('click', addExtra);
+  document.getElementById('extraMins').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') addExtra();
+  });
+  document.getElementById('extraTopic').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') document.getElementById('extraMins').focus();
+  });
+
+  // Hide loading
+  setTimeout(() => {
+    document.getElementById('loadingOverlay').classList.add('hidden');
+  }, 200);
+}
+
+init();
+</script>
+
+</body>
+</html>
