@@ -808,7 +808,184 @@ font-style: normal;
 margin: 0 4px;
 }
 
-/* Loading state */
+/* ===================================================
+COMPREHENSIVE MOBILE OVERRIDE
+Fixes everything on phone screens (≤ 600px)
+=================================================== */
+@media (max-width: 600px) {
+.container {
+padding: 24px 16px 60px;
+}
+
+/* Header */
+.header {
+flex-direction: column;
+align-items: flex-start;
+margin-bottom: 28px;
+padding-bottom: 18px;
+gap: 8px;
+}
+.header-left { width: 100%; }
+.header-eyebrow { font-size: 13px; margin-bottom: 2px; }
+.header-title { font-size: 28px; line-height: 1.1; margin-bottom: 6px; }
+.header-title .cn { font-size: 22px; margin-right: 10px; }
+.header-subtitle { font-size: 12px; }
+.header-right { text-align: left; width: 100%; }
+.today-date { font-size: 16px; }
+.today-weekday { font-size: 12px; display: inline-block; margin-left: 8px; }
+
+/* Quote */
+.quote {
+font-size: 14px;
+margin-bottom: 24px;
+padding-left: 14px;
+}
+
+/* Main grid - stack vertically */
+.main-grid {
+grid-template-columns: 1fr !important;
+gap: 16px;
+margin-bottom: 32px;
+}
+
+/* Today card */
+.today-card {
+padding: 20px 18px 18px;
+}
+.today-header {
+flex-direction: column;
+gap: 4px;
+align-items: flex-start;
+margin-bottom: 16px;
+padding-bottom: 12px;
+}
+.today-title { font-size: 18px; }
+.today-meta { font-size: 13px; }
+.section-label { font-size: 11px; }
+
+/* Tasks */
+.task {
+padding: 14px 0;
+align-items: center;
+}
+.task-checkbox {
+width: 20px;
+height: 20px;
+margin-right: 12px;
+}
+.task-name { font-size: 15px; margin-bottom: 2px; }
+.task-detail { font-size: 12px; line-height: 1.4; }
+.task-duration {
+font-size: 14px;
+margin-left: 10px;
+white-space: nowrap;
+}
+
+/* Stats panel */
+.stats-panel {
+flex-direction: row;
+gap: 10px;
+overflow-x: auto;
+padding-bottom: 4px;
+}
+.stat-card {
+padding: 16px 14px;
+min-width: 140px;
+flex: 1 1 0;
+}
+.stat-card.streak {
+min-width: 150px;
+}
+.stat-label {
+font-size: 10px;
+margin-bottom: 4px;
+letter-spacing: 0.04em;
+}
+.stat-value { font-size: 36px; }
+.stat-unit { font-size: 12px; margin-left: 3px; }
+.stat-foot { font-size: 10px; margin-top: 4px; line-height: 1.3; }
+.progress-track { height: 4px; margin-top: 8px; }
+
+/* Section blocks */
+.section-block { margin-bottom: 32px; }
+.section-title {
+font-size: 22px;
+flex-wrap: wrap;
+}
+.section-title .cn {
+font-size: 18px;
+margin-right: 10px;
+display: inline;
+}
+.section-sub { font-size: 12px; margin-bottom: 16px; }
+
+/* Week schedule - 2 columns on phone */
+.week-grid {
+grid-template-columns: repeat(2, 1fr) !important;
+gap: 8px;
+}
+.day-card {
+min-height: auto;
+padding: 12px 10px 10px;
+}
+.day-card.today::before {
+font-size: 9px;
+padding: 1px 6px;
+top: -7px;
+}
+.day-name { font-size: 10px; }
+.day-name-cn { font-size: 14px; margin-bottom: 8px; }
+.day-tasks { font-size: 11px; line-height: 1.5; }
+
+/* Extra study */
+.extra-card { padding: 18px 16px; }
+.extra-summary {
+padding: 10px 12px;
+font-size: 12px;
+margin-bottom: 14px;
+}
+.extra-input-row {
+flex-direction: column;
+gap: 10px;
+}
+.input-group, .input-mini {
+width: 100%;
+flex: 1 1 100%;
+min-width: 0;
+}
+.input-mini { flex: 0 0 auto; }
+.input-field { padding: 10px 12px; font-size: 14px; }
+.btn {
+width: 100%;
+padding: 12px;
+align-self: stretch;
+}
+.extra-item-topic { font-size: 13px; }
+.extra-item-date { font-size: 11px; }
+.extra-item-duration { font-size: 14px; }
+
+/* Rewards */
+.rewards-grid {
+grid-template-columns: 1fr !important;
+gap: 10px;
+}
+.reward-card { padding: 16px 14px; }
+.reward-icon { font-size: 22px; margin-bottom: 6px; }
+.reward-name { font-size: 14px; }
+.reward-condition { font-size: 11px; margin-bottom: 8px; }
+.reward-status { font-size: 10px; padding: 3px 8px; }
+.reward-progress { font-size: 12px; }
+
+/* Footer */
+.footer { font-size: 12px; margin-top: 40px; }
+
+/* Celebration */
+.celebration {
+font-size: 13px;
+padding: 12px 14px;
+}
+}
+
 .loading-overlay {
 position: fixed;
 inset: 0;
@@ -1481,5 +1658,3 @@ init();
 
 </body>
 </html>
-
-________________________________________
